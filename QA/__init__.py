@@ -106,12 +106,6 @@ async def setqa(bot, context):
             return
         q = context['raw_message'][4:]
         q = q.strip()
-        if context['user_id'] == 645462535:
-            await bot.send(context, f'莉娘没有权限删除问题奥~', at_sender=False)
-            return
-        if context['user_id'] == 492262570:
-            await bot.send(context, f'透玄宝', at_sender=True)
-            return
         if q.isdigit():
             line = Question.delete().where(
                 Question.id == q
